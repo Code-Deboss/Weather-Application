@@ -3,6 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import './styles/App.css'
 
+
 function App() {
   return (
     <section className='app'>
@@ -20,13 +21,16 @@ function App() {
         </div>
         <div className="bottom">
           <div className="feels">
-            <span>60˚F</span>
+            <span className='bold'>55˚F</span>
+            <p>Dew Point</p>
           </div>
           <div className="humidity">
-            <span>20%</span>
+            <span className='bold'>20%</span>
+            <p>Humidity</p>
           </div>
           <div className="wind">
-            <span>12MPH</span>
+            <span className='bold'>12MPH</span>
+            <p>Wind Speed</p>
           </div>
         </div>
       </div>

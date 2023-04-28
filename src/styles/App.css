@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .app::before{
     content: '';
@@ -36,7 +37,7 @@ h1{
     height: 100%;
     margin: auto;
     /* background-color: red; */
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
     position: relative;
     /* top: 10%; */
     display: flex;
@@ -59,7 +60,7 @@ h1{
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     margin: 2rem auto;
     padding: 1.5rem;
@@ -72,6 +73,9 @@ h1{
     color: white;
     font-size: 1.2rem;
     font-weight: 500;
+}
+.bold{
+    font-weight: 900;
 }
 /* .app .bottom {
     display: flex;

@@ -12,7 +12,7 @@ function App() {
             <p>Lagos</p>
           </div>
           <div className="temp">
-            <h1>60ºF</h1>
+            <h1>60˚F</h1>
           </div>
           <div className="description">
             <p>Clouds</p>
@@ -20,7 +20,7 @@ function App() {
         </div>
         <div className="bottom">
           <div className="feels">
-            <span>60ºF</span>
+            <span>60˚F</span>
           </div>
           <div className="humidity">
             <span>20%</span>

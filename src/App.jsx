@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
+import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
+import './styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <section className='app'>
+      <div className="container">
+        <div className="top">
+          <div className="location">
+            <p>Lagos</p>
+          </div>
+          <div className="temp">
+            <h1>60ºF</h1>
+          </div>
+          <div className="description">
+            <p>Clouds</p>
+          </div>
+        </div>
+        <div className="bottom">
+          <div className="feels">
+            <span>60ºF</span>
+          </div>
+          <div className="humidity">
+            <span>20%</span>
+          </div>
+          <div className="wind">
+            <span>12MPH</span>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </section>
   )
 }
 

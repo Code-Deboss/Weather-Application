@@ -25,6 +25,9 @@
 .app .search{
     text-align: center;
     padding: 1rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* background-color: aqua; */
 }
 .app input {
@@ -38,7 +41,7 @@
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     color: whitesmoke;
-    focus-outline:  whitesmoke !;
+    focus-outline:  whitesmoke;
 
 }
 

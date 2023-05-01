@@ -41,12 +41,12 @@
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     color: whitesmoke;
-    focus-outline:  whitesmoke;
+    outline: 1px solid whitesmoke;
 
 }
 
 .app input::placeholder {
-    color: whitesmoke;
+    color: gray;
 }
 span{
     font-size: 1.6rem;

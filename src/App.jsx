@@ -1,37 +1,40 @@
-import React from 'react';
-import { useState } from 'react';
-import axios from 'axios';
-import './styles/App.css'
+import React, { useState } from "react";
+import axios from "axios";
+import "./styles/App.css";
 
 function App() {
-  const [data, setData] = useState({})
-  const [location, setLocation] = useState('')
-  const [unit, setUnit] = useState('imperial')
+  const [data, setData] = useState({});
+  const [query, setQuery] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=57a626d41d8f3f2f48aace2678eb6439&units=${unit}`
+  const API_KEY = "57a626d41d8f3f2f48aace2678eb6439";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}`;
 
   const searchLocation = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       axios.get(url).then((response) => {
-        setData(response.data)
-        console.log(response.data)
-      })
-      setLocation('')
+        setData(response.data);
+        console.log(response.data);
+      });
+      setQuery("");
     }
-  }
+  };
 
-  const toggleUnit = () => {
-    setUnit(unit === 'imperial' ? 'metric' : 'imperial')
-  }
+  const calculateDewPoint = (temperature, humidity) => {
+    const a = 17.27;
+    const b = 237.7;
+    const alpha = (a * temperature) / (b + temperature) + Math.log(humidity / 100.0);
+    const dewPoint = (b * alpha) / (a - alpha);
+    return dewPoint.toFixed(1);
+  };
 
   return (
-    <section className='app'>
+    <section className="app">
       <div className="search">
         <input
-          value={location}
-          onChange={event => setLocation(event.target.value)}
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
           onKeyPress={searchLocation}
-          placeholder='Enter Location'
+          placeholder="Enter Location"
           type="text"
           spellCheck="true"
         />
@@ -39,37 +42,47 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>{data.name}</p>
+            <p>
+              {data.name}, {data.sys ? data.sys.country : ""}
+            </p>
           </div>
           <div className="temp">
-            {data.main ? <h1>{data.main.temp} {unit === 'imperial' ? '˚F' : '˚C'}</h1> : null}
+            {data.main ? (
+              <h1>{(data.main.temp - 273.15).toFixed(1)}˚C</h1>
+            ) : null}
           </div>
           <div className="description">
-            <p>{data.weather ? data.weather[0].description : null}</p>
+            <p>{data.weather ? data.weather[0].description : ""}</p>
           </div>
         </div>
         <div className="bottom">
           <div className="feels">
-            <span className='bold'>{data.main ? `${data.main.feels_like} ${unit === 'imperial' ? '˚F' : '˚C'}` : null}</span>
+            <span className="bold">
+              {data.main
+                ? calculateDewPoint(
+                  data.main.temp - 273.15,
+                  data.main.humidity
+                ) + "˚C"
+                : ""}
+            </span>
             <p>Dew Point</p>
           </div>
           <div className="humidity">
-            <span className='bold'>{data.main ? `${data.main.humidity}%` : null}</span>
+            <span className="bold">
+              {data.main ? data.main.humidity : ""}%
+            </span>
             <p>Humidity</p>
           </div>
           <div className="wind">
-            <span className='bold'>{data.wind ? `${data.wind.speed} ${unit === 'imperial' ? 'MPH' : 'KPH'}` : null}</span>
+            <span className="bold">
+              {data.wind ? data.wind.speed : ""}m/s
+            </span>
             <p>Wind Speed</p>
           </div>
         </div>
-        <div className="unit-btn">
-          <button onClick={toggleUnit}>
-            {unit === 'imperial' ? 'Change to Celsius' : 'Change to Fahrenheit'}
-          </button>
-        </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./styles/App.css";
+import "./styles/App.scss";
 
 function App() {
   const [data, setData] = useState({});

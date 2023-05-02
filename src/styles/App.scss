@@ -1,0 +1,208 @@
+// :root{
+//     --overlay: rgba(7, 7, 7, 0.289);
+//     --text: white;
+//     --background: url("/src/assets/ken-cheung-KonWFWUaAuk-unsplash.jpg");
+// }
+
+
+// .app {
+//     height: 100vh;
+//     width: 100%;
+//     position: relative;
+//     background: var(--overlay);
+//     color: var(--text);
+// }
+// .app::before{
+//     content: '';
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//     z-index: -1;
+//     background: var(--background) no-repeat center center/cover;
+// }
+// .app .search{
+//     text-align: center;
+//     padding: 1rem ;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+    
+// }
+// .app input {
+//     padding: 1rem;
+//     font-size: 1.2rem;
+//     border-radius: 10px;
+//     width: 30rem;
+//     text-align: center;
+//     border: none;
+//     background: rgba(255, 255, 255, 0.05);
+//     backdrop-filter: blur(10px);
+//     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+//     color: whitesmoke;
+//     outline: 1px solid whitesmoke;
+
+// }
+
+// .app input::placeholder {
+//     color: gray;
+// }
+// span{
+//     font-size: 1.6rem;
+// }
+// h1{
+//     font-size: 6rem;
+// }
+// .container{
+//    max-width: 700px;
+//     max-height: 100%;
+//     height: 90%;
+//     margin: auto;
+//     /* background-color: red; */
+//     padding: 1rem 1rem;
+//     position: relative;
+//     /* top: 10%; */
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+    
+
+// }
+// .app .top{
+//     width: 100%;
+//     margin: 1rem auto;
+// }
+// .app .description{
+//     position: relative;
+//     right: -90%;
+//     top: 60%;
+//     transform-origin: 0 0;
+//     transform: rotate(270deg);
+// }
+// .app .bottom {
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     text-align: center;
+//     width: 100%;
+//     max-width: 100%;
+//     margin: 2rem auto;
+//     padding: 1.5rem;
+//     border-radius: 20px;
+//     background: linear-gradient(to right, rgba(0, 0, 0, 0.639), rgba(0, 0, 0, 0.177)),
+//         url('/src/assets/sergey-pesterev-JV78PVf3gGI-unsplash.jpg') no-repeat center center/cover;
+   
+//     backdrop-filter: blur(10px);
+//     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+//     color: white;
+//     font-size: 1.2rem;
+// }
+// .bold{
+//     font-weight: 900;
+// }
+:root {
+    --overlay: rgba(7, 7, 7, 0.289);
+    --text: white;
+    --background: url("/src/assets/ken-cheung-KonWFWUaAuk-unsplash.jpg");
+}
+
+$app-color: var(--overlay);
+$app-text-color: var(--text);
+$app-bg-img: var(--background);
+
+.app {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: $app-color;
+    color: $app-text-color;&::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: $app-bg-img no-repeat center center/cover;
+        }}
+
+span {
+        font-size: 1.6rem;
+    }
+    h1{
+        font-size: 6rem;
+    }
+.search {
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    width: 30rem;
+    text-align: center;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    color: whitesmoke;
+    outline: 1px solid whitesmoke;
+
+    &::placeholder {
+        color: gray;
+    }
+}
+
+.top {
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.description {
+    position: relative;
+    right: -90%;
+    top: 90%;
+    transform-origin: 0 0;
+    transform: rotate(270deg);
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.639), rgba(0, 0, 0, 0.177)),
+        url('/src/assets/sergey-pesterev-JV78PVf3gGI-unsplash.jpg') no-repeat center center/cover;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 1.2rem;
+
+    .bold {
+        font-weight: 900;
+    }
+}
+
+
+.container {
+    max-width: 700px;
+    max-height: 100%;
+    height: 90%;
+    margin: auto;
+    padding: 1rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

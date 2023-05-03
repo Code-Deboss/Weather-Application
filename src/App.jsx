@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./sass/App.scss";
 
+
 function App() {
   const [data, setData] = useState({});
   const [query, setQuery] = useState("");
@@ -81,7 +82,9 @@ function App() {
           </div>
         </div>
       </div>
+     
     </section>
+    
   );
 }
 

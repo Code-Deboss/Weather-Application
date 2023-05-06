@@ -13,8 +13,8 @@ This is a simple weather application that provides real-time weather information
 
 # Technologies Used
 1. ReactJS
-SCSS
-OpenWeatherMap API
+2. SCSS
+3. OpenWeatherMap API
 
 # Credits
 This application was built by Nwabuisi Obinna Divine as a personal project.
